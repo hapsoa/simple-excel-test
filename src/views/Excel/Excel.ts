@@ -3,7 +3,7 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component({})
 export default class Excel extends Vue {
   public $refs!: {
-    imageInput: any;
+    fileInput: any;
   };
 
   private name: string = '';
@@ -20,7 +20,7 @@ export default class Excel extends Vue {
   }
 
   private pickFile() {
-    this.$refs.imageInput.click();
+    this.$refs.fileInput.click();
   }
 
   private onFilePicked(e: any) {
@@ -34,7 +34,7 @@ export default class Excel extends Vue {
       fileReader.addEventListener('load', () => {
         // csv형식을 string text로 만든다.
         const csvText: string = fileReader.result as string;
-        // console.log('csvText', csvText);
+        console.log('csvText', csvText);
 
         // csv string을 json으로 바꾼다.
         const jsonResult = this.csvJSON(csvText);

@@ -7,7 +7,7 @@
         <input
           type="file"
           style="display: none"
-          ref="imageInput"
+          ref="fileInput"
           @change="onFilePicked"
         />
       </v-col>
